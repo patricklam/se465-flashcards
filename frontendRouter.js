@@ -26,14 +26,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/upload', function(req, res, next) {
-  res.render('upload', { title: 'Express' });
-});
-  
-router.get('/handleUpload', function(req, res, next) {
-  res.render('handleUpload', { title: 'Express' });
-});
-
 router.get('/edit', function(req, res, next) {
   const db = req.app.get('db');
   db.find({}, function(err, dbImages) {
