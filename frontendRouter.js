@@ -2,10 +2,6 @@ const express = require('express');
 const router = express.Router();
 const reset = require('./reset');
 
-function readFromDb(app, res, continuation) {
-  const db = app.get('db');
-}
-
 router.get('/', function(req, res, next) {
   const db = req.app.get('db');
 
@@ -29,7 +25,7 @@ router.get('/', function(req, res, next) {
 router.get('/edit', function(req, res, next) {
   const db = req.app.get('db');
   db.find({}, function(err, dbImages) {
-    res.render('edit', { title: 'Edit', values: dbImages });
+    res.render('edit', { values: dbImages });
   });
 });
 
