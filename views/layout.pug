@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.3.1/css/all.css', integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU', crossorigin='anonymous')
+    block default-scripts
+      script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT', crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+      script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k', crossorigin='anonymous')
+    block scripts
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href="#") SE465 Flash Cards
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      div#navbarsLeft.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li#nav-home.nav-item
+            a.nav-link(href="/")
+              | Home 
+          li#nav-edit.nav-item
+            a.nav-link(href="/edit")
+              | Edit
+      div#navbarsRight.collapse.navbar-collapse.order-3
+        ul.navbar-nav.ml-auto
+          li#nav-clear.nav-item
+            a.nav-link(href="/clear")
+              | Clear
+          li#nav-reset.nav-item
+            a.nav-link(href="/reset")
+              | Reset
+    div.main
+      block content
+    script
+      | var activeNav = $("#nav-"+$("div#action").text());
+      | activeNav.addClass("active")
+      | activeNav.children().append("<span class='sr-only'>(current)</span>")

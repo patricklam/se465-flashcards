@@ -1,0 +1,36 @@
+body {
+  padding-top: 50px;
+}
+
+.main {
+  padding: 40px 15px;
+}
+
+.hidden {
+  display:none;
+}
+
+.front {
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom:1em;
+  display:block;
+}
+
+.back {
+  text-align:center;
+  font-size:x-large;
+  display:none;
+}
+
+.back button {
+  margin: 1em;
+}
+
+.num {
+  text-align: right;
+}
+
+#upload {
+  margin: 10px;
+}

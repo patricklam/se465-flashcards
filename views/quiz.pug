@@ -1,0 +1,15 @@
+extends layout
+
+block scripts
+  script(src='/js/quiz.js')
+
+block content
+  p#_id.hidden= img._id
+  img#front.front(src=img.fname)
+  p#qqq
+  p.back= img.location
+  p#imgdata.hidden= img.imgdata
+  div.back
+    button.btn.btn-primary(accesskey='y', onclick='yup()')#yes Yes
+    button.btn.btn-primary(accesskey='n', onclick='nope()')#no No
+  div#action.hidden home

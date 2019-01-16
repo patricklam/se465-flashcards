@@ -1,0 +1,25 @@
+{
+  "name": "se465-flashcards",
+  "version": "0.0.1",
+  "description": "SE 465 Flashcards app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "debug": "^4.1.0",
+    "express-formidable": "^1.2.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.3",
+    "nedb": "^1.8.0"
+  },
+  "engines": {
+    "node": "10.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://api.glitch.com/se465-flashcards/git"
+  },
+  "license": "CC-BY-NC-SA-3.0"
+}

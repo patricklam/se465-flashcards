@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  h1= title
+  p Operation #{action} requested. (I can't confirm without waiting for the callback; declared NOTABUG).
+  div#action.hidden= action

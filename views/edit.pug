@@ -1,0 +1,37 @@
+extends layout
+
+block scripts
+  - https://github.com/unwild/SimpleTableCellEditor
+  script(src='/js/SimpleTableCellEditor.es5.min.js')
+
+block content
+  h1 Edit Flashcards
+  div.container
+    div.content
+      div.row
+        div.col-sm.align-items-center.justify-content-center.page-hero.d-flex
+          label.btn.btn-primary.btn-file#upload Upload new image
+            input(type="file", style="display:none")
+      div.row
+        table#grid.table.table-striped
+          thead
+            th Image
+            th Location
+            th.num Correct
+            th.num Total
+            th.num %
+            th
+          each card, index in values
+            tr(id='row-'+index,_id=card._id)
+              td.front 
+                img.front(src= card.fname, width=200)
+              td(index='ind-'+index+'-2').editable= card.location
+              td(index='ind-'+index+'-3').editableNum.num= card.correct
+              td(index='ind-'+index+'-4').editableNum.num= card.total
+              td(index='ind-'+index+'-5').num 
+              td(index='ind-'+index+'-6')
+                i.btn.fa.fa-trash(aria-hidden="true", onclick="trash("+index+")")
+                span.sr-only Delete
+              td.imgdata.hidden= card.imgdata
+      div#action.hidden edit
+  script(src='/js/edit.js')
